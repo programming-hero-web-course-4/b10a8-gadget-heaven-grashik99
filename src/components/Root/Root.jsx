@@ -4,7 +4,7 @@ import Footer from "../Footer/Footer";
 
 const Root = () => {
     return (
-        <div className="sora-font">
+        <div className="sora-font max-w-screen-2xl mx-auto">
             <Navigation></Navigation>
             <Outlet></Outlet>
             <Footer></Footer>            
