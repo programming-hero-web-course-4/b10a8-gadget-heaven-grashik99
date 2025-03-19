@@ -1,5 +1,6 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { FaBucket } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
     return (
@@ -11,9 +12,9 @@ const Navigation = () => {
                     </div>
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
-                            <li><a>Home</a></li>
-                            <li><a>Statistics</a></li>
-                            <li><a>Dashboard</a></li>
+                            <li className="mr-2"><NavLink to="/">Home</NavLink></li>
+                            <li className="mr-2"><NavLink to="/details">Statistics</NavLink></li>
+                            <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         </ul>
                     </div>
                     <div className="navbar-end flex gap-2">
