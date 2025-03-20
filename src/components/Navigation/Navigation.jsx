@@ -1,10 +1,20 @@
 import { TiShoppingCart } from "react-icons/ti";
 import { FaBucket } from "react-icons/fa6";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 const Navigation = () => {
+
+    const location = useLocation();
+
+    const color = () => {
+        switch (location.pathname){
+            case '/': return 'bg-[#9538E2]';
+            default: return ''
+        }
+    }
+
     return (
-        <div className=" bg-[#9538E2] mt-4 mx-4 rounded-t-2xl">
+        <div className={`${color()} mt-4 mx-4 rounded-t-2xl`}>
             <div className="w-[80%] mx-auto">
                 <div className="navbar text-black">
                     <div className="navbar-start">

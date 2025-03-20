@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState} from "react";
-import { ProductsContext } from "../Products/Products";
+import { ProductsContext } from "../Root/Root";
+
 
 
 const Category = () => {
