@@ -3,17 +3,40 @@ import { useContext } from "react";
 import { ProductsContext } from "../Root/Root";
 import Ratings from "../Ratings/Ratings";
 import SpList from "../spList/spList";
+import { MdOutlineAddShoppingCart } from "react-icons/md";
+import { GiEternalLove } from "react-icons/gi";
 
 const ProductDetails = () => {
+
+
     const { id } = useParams();
-    const { products } = useContext(ProductsContext);
+    const { products, cart, setCart, wish, setWish } = useContext(ProductsContext);
     const product = products.find(product => product.product_id == id)
     const { product_title, product_image, price, description, Specification, availability, rating, brand } = product;
+
+    const addToCart = (product) => {
+        if(cart.length === 0){
+            setCart([product]);
+        }else{
+            const newCarts = [... cart, product];
+            setCart(newCarts)
+        }
+    };
+
+    const addToWish = (product) => {
+        if(wish.length === 0){
+            setWish([product]);
+        }else{
+            const newCarts = [... cart, product];
+            setWish(newCarts)
+        }
+    };
+
     return (
         <div>
             <div className="bg-[#9538E2] text-center p-6 pb-40">
                 <h1 className="text-3xl font-bold text-[#fff] mb-4">Product Details</h1>
-                <p className="text-[#ffffffc0] mb-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to <br/> the coolest accessories, we have it all!</p>
+                <p className="text-[#ffffffc0] mb-4">Explore the latest gadgets that will take your experience to the next level. From smart devices to <br /> the coolest accessories, we have it all!</p>
             </div>
             {/* Dynamic */}
             <div className="bg-[#fbf5f5] rounded-xl p-8 shadow-xl w-[60%] mx-auto my-6 relative -mt-36 flex gap-8 justify-evenly">
@@ -32,9 +55,9 @@ const ProductDetails = () => {
                         }
                     </ul>
                     <h4 className="mb-2">{<Ratings rating={rating}></Ratings>}</h4>
-                    <div>
-                        <button className="btn mr-2">Add to Card</button>
-                        <button className="btn mr-2">HH</button>
+                    <div className="flex items-center">
+                        <button onClick={() => addToCart(product)} className="btn mr-2 rounded-3xl">Add to Card <span className="text-xl"><MdOutlineAddShoppingCart /></span></button>
+                        <button onClick={() => addToWish(product)} className="btn rounded-3xl text-xl"><GiEternalLove /></button>
                     </div>
                 </div>
             </div>

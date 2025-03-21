@@ -1,5 +1,5 @@
 import { TiShoppingCart } from "react-icons/ti";
-import { FaBucket } from "react-icons/fa6";
+import { GiEternalLove } from "react-icons/gi";
 import { NavLink, useLocation } from "react-router-dom";
 
 const Navigation = () => {
@@ -23,13 +23,13 @@ const Navigation = () => {
                     <div className="navbar-center hidden lg:flex">
                         <ul className="menu menu-horizontal px-1">
                             <li className="mr-2"><NavLink to="/">Home</NavLink></li>
-                            <li className="mr-2"><NavLink to="/details">Statistics</NavLink></li>
+                            <li className="mr-2"><NavLink to="/product">Statistics</NavLink></li>
                             <li><NavLink to="/dashboard">Dashboard</NavLink></li>
                         </ul>
                     </div>
                     <div className="navbar-end flex gap-2">
                         <button className="btn rounded-full text-xl px-3 inline-block ml-2"><TiShoppingCart /></button>
-                        <button className="btn rounded-full text-xl px-3"><FaBucket /></button>
+                        <button className="btn rounded-full text-xl px-3"><GiEternalLove /></button>
                     </div>
                 </div>
             </div>

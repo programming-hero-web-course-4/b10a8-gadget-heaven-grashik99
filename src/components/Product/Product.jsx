@@ -17,7 +17,7 @@ const Product = ({ product }) => {
                 </figure>
                 <div className="card-body items-center text-center">
                     <h2 className="card-title">{product_title}</h2>
-                    <p>{price}</p>
+                    <p>{price} $</p>
                     <div className="card-actions">
                         <Link to={`/details/${product_id}`}><button className="btn bg-white border-2 border-solid border-black rounded-full hover:bg-blue-600 hover:text-white">View Details</button></Link>
                     </div>
