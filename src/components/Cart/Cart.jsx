@@ -2,11 +2,14 @@ import { useContext } from "react";
 import { ProductsContext } from "../Root/Root";
 import CartCard from "../CartCard/CartCard";
 import cartPic from "../../assets/empty-cart.png"
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import ok from "../../assets/Group.png"
 import { toast } from "react-toastify";
 
 const Cart = () => {
+
+    const navigate = useNavigate()
+
     const { cart, cPrice, setCart, setCartNumber, setCPrice } = useContext(ProductsContext);
 
     const sortBy = () => {
@@ -20,6 +23,9 @@ const Cart = () => {
             setCart([])
             setCartNumber(0)
             setCPrice(0)
+            setTimeout(() => {
+                navigate('/')
+            }, 1000);
         } else {
             toast.warn('Please add Product.')
         }
