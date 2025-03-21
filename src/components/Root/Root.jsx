@@ -13,6 +13,9 @@ const Root = () => {
         const [products, setProducts] = useState([]);
         const [cart, setCart] = useState([]);
         const [wish, setWish] = useState([]);
+        const [cPrice, setCPrice] = useState(0);
+        const [cartNumber, setCartNumber] = useState(0);
+        const [wishNumber, setWishNumber] = useState(0);
      
         useEffect(() => {
             fetch('./products.json')
@@ -25,7 +28,7 @@ const Root = () => {
 
     return (
         <div className="sora-font max-w-screen-2xl mx-auto">
-            <ProductsContext.Provider value={{products, setProducts, rawProducts, cart, setCart, wish, setWish}}>
+            <ProductsContext.Provider value={{products, setProducts, rawProducts, cart, setCart, wish, setWish, cPrice, setCPrice, cartNumber, setCartNumber, wishNumber, setWishNumber}}>
                 <Navigation></Navigation>
                 <Outlet></Outlet>
                 <Footer></Footer>

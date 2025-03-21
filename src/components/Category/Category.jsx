@@ -28,7 +28,7 @@ const Category = () => {
     }
 
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col w-[60%] mx-auto md:w-full">
             {
                 categories.map(category => <button key={category} onClick={()=> heddleCategory(category)} className="btn btn-success text-white block mb-2">{category}</button>)
             }

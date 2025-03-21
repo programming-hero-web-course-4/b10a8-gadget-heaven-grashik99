@@ -11,12 +11,16 @@ import ProductDetails from './components/ProductDetails/ProductDetails';
 import Dashboard from './components/Dashboard/Dashboard';
 import Cart from './components/Cart/Cart';
 import Wishlist from './components/Wishlist/Wishlist';
+import Statistics from './components/Statistics/Statistics';
+import Deal from './components/Deal/Deal';
+import ErrorElement from './components/ErrorElement/ErrorElement';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorElement></ErrorElement>,
     children: [
       {
         path: "/",
@@ -27,11 +31,15 @@ const router = createBrowserRouter([
         element: <ProductDetails></ProductDetails>
       },
       {
+        path: "/statistics",
+        element: <Statistics></Statistics>
+      },
+      {
         path: "/dashboard",
         element: <Dashboard></Dashboard>,
         children: [
           {
-            path: "/dashboard",
+            path: "/dashboard/",
             element:<Cart></Cart>
           },
           {
@@ -39,6 +47,10 @@ const router = createBrowserRouter([
             element: <Wishlist></Wishlist>
           }
         ]
+      },
+      {
+        path: "/deal",
+        element: <Deal></Deal>
       }
     ]
   },
