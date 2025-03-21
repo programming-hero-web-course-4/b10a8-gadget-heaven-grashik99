@@ -16,7 +16,9 @@ const {products} = useContext(ProductsContext);
 
 return (
     <div className="bg-[#F6F6F6] my-6 py-4 pr-4">
-        
+            <div className="w-[60%] mx-auto">
+                <h1 className="text-center text-5xl mb-8 text-[#2a2a2a] shadow-lg pb-6 rounded-md">Exclusive Gadgets</h1>
+            </div>
             <div className="md:grid grid-cols-[350px_1fr]">
                 <div className="w-auto mx-auto mt-4">
                     <Category></Category>
